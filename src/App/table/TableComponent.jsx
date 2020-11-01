@@ -1,7 +1,11 @@
 import React from 'react';
-import { Button, Image, Table } from 'semantic-ui-react';
+import NumberFormat from 'react-number-format';
+import { Button, Grid, Image, Table } from 'semantic-ui-react';
 
 const TableComponent = ( props ) => {
+
+    let wageLimit = (props.coin === 'MXN') ? 10000 : 465.11627907;
+
     return(
         <Table celled striped selectable>
             <Table.Header>
@@ -22,12 +26,29 @@ const TableComponent = ( props ) => {
                             </Table.Cell>
                             <Table.Cell>{empl.name + ' ' +  empl.last}</Table.Cell>
                             <Table.Cell>{empl.company}</Table.Cell>
-                            <Table.Cell>{empl.wage}</Table.Cell>
                             <Table.Cell>
-                                <Button>Edit</Button>
-                                <Button onClick={() => { props.deleteEmployee(empl.id) }}>
-                                    Delete
-                                </Button>
+                                <NumberFormat 
+                                prefix={'$'}
+                                decimalScale={2}
+                                value={empl.wage} 
+                                displayType='text' 
+                                thousandSeparator={true}
+                                className={(empl.wage >= wageLimit) ? ('text-green-500') : ('text-red-500')}/>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <Grid>
+                                    <Grid.Row>
+                                        <Grid.Column computer='8' tablet='8' mobile='16'>
+                                            <Button fluid>Edit</Button>
+                                        </Grid.Column>
+                                        <Grid.Column computer='8' tablet='8' mobile='16'>
+                                            <Button fluid 
+                                            onClick={() => { props.deleteEmployee(empl.id) }}>
+                                                Delete
+                                            </Button>
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                </Grid>
                             </Table.Cell>
                         </Table.Row>
                     ))

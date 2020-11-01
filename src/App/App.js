@@ -48,7 +48,7 @@ const App = () => {
                     <Grid.Column computer='8' tablet='8' mobile='16'>
                         <Header textAlign='center' as='h3'>
                             <Icon name="users"/>
-                            You currently have {employeeList.length} users.
+                            You currently have {employeeList.length} employees.
                         </Header>
                         <NewConrtainer 
                         modalState={modalState} 
@@ -69,6 +69,7 @@ const App = () => {
             </Grid.Row>
             <Grid.Row className='py-4'>
                 <TableContainer
+                coin={coin}
                 employees={employeeList}
                 setEmployees={setEmployeeList}/>
             </Grid.Row>

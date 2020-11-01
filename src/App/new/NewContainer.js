@@ -27,10 +27,16 @@ const NewContainer = ( props ) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (!employee.name || !employee.last || !employee.company || !employee.wage) {
-            addEmployee(employee);
-            setEmployee(defaultValues);
-            props.setModalState(false);
+        if (
+            employee.name !== '' && 
+            employee.last !== '' && 
+            employee.company !== '' && 
+            employee.wage > 0 && employee.wage !== null) {
+                addEmployee(employee);
+                setEmployee(defaultValues);
+                props.setModalState(false);
+        } else {
+            alert('All fields are required, and wages must be greater than 0!')
         }
     }
 
