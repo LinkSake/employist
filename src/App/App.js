@@ -51,6 +51,7 @@ const App = () => {
                             You currently have {employeeList.length} employees.
                         </Header>
                         <NewConrtainer 
+                        coin={coin}
                         modalState={modalState} 
                         employees={employeeList} 
                         setModalState={setModalState}

@@ -42,6 +42,7 @@ const NewContainer = ( props ) => {
 
     return (
         <NewComponent 
+        coin={props.coin}
         employee={employee}
         handleSubmit={handleSubmit}
         modalState={props.modalState}

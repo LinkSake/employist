@@ -2,6 +2,9 @@ import React from 'react';
 import { Button, Form, Grid, Input, Modal } from 'semantic-ui-react';
 
 const NewComponent = ( props ) => {
+
+    console.log(props.coin);
+
     return(
         <Modal
         as={Form}
@@ -60,8 +63,10 @@ const NewComponent = ( props ) => {
                                 <Input 
                                 step='any'
                                 name='wage' 
-                                type='number' 
+                                type='number'
+                                label={props.coin}
                                 iconPosition='left'
+                                labelPosition='right' 
                                 icon='money bill alternate'
                                 value={props.employee.wage} 
                                 onChange={props.handleInputChange}/>
