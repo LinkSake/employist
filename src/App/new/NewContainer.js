@@ -36,7 +36,7 @@ const NewContainer = ( props ) => {
                 setEmployee(defaultValues);
                 props.setModalState(false);
         } else {
-            alert('All fields are required, and wages must be greater than 0!')
+            alert('All fields are required, and wages must be greater than 0!');
         }
     }
 

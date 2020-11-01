@@ -2,9 +2,6 @@ import React from 'react';
 import { Button, Form, Grid, Input, Modal } from 'semantic-ui-react';
 
 const NewComponent = ( props ) => {
-
-    console.log(props.coin);
-
     return(
         <Modal
         as={Form}

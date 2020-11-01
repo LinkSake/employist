@@ -13,7 +13,7 @@ const TableComponent = ( props ) => {
                     <Table.HeaderCell>Photo</Table.HeaderCell>
                     <Table.HeaderCell>Name</Table.HeaderCell>
                     <Table.HeaderCell>Company</Table.HeaderCell>
-                    <Table.HeaderCell>Wage</Table.HeaderCell>
+                    <Table.HeaderCell textAlign='right'>Wage</Table.HeaderCell>
                     <Table.HeaderCell/>
                 </Table.Row>
             </Table.Header>
@@ -26,7 +26,7 @@ const TableComponent = ( props ) => {
                             </Table.Cell>
                             <Table.Cell>{empl.name + ' ' +  empl.last}</Table.Cell>
                             <Table.Cell>{empl.company}</Table.Cell>
-                            <Table.Cell>
+                            <Table.Cell textAlign='right'>
                                 <NumberFormat 
                                 prefix={'$'}
                                 decimalScale={2}
