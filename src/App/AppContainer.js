@@ -3,14 +3,15 @@ import AppComponent from './AppComponent';
 
 const AppContainer = () => {
 
+    /* Default values */
     const tempEmploy  = [
-        { id: 0, name: 'Martin', last: 'Xa', company: 'Corp. Co.', img: '/img/default.png', wage: 20000 },
-        { id: 1, name: 'Steve', last: 'Ta', company: 'Corp. Co.', img: '/img/default.png', wage: 30000 },
-        { id: 2, name: 'Rodrigo', last: 'Ka', company: 'Corp. Co.', img: '/img/default.png', wage: 1998 },
+        { id: 0, name: 'Wallace', last: 'Wells', company: 'Pilgrim Corp.', img: '/img/default.png', wage: 15090 },
+        { id: 1, name: 'Stephen', last: 'Stills', company: 'Pilgrim Corp.', img: '/img/default.png', wage: 5998 },
+        { id: 2, name: 'Gideon', last: 'Graves', company: 'GGG Record Label', img: '/img/default.png', wage: 25250 },
     ];
-
     const defaultEmployee = { id: 0, name: '', last: '', company: '', img: '/img/default.png', wage: 0 };
 
+    /* States */
     const [query, setQuery] = useState('');
     const [coin, setCoin] = useState('MXN');
     const [isEditing, setIsEditing] = useState(false);
@@ -18,6 +19,7 @@ const AppContainer = () => {
     const [employeeList, setEmployeeList] = useState(tempEmploy);
     const [currentEmployee, setCurrentEmployee] = useState(defaultEmployee);
 
+    /* Functions */
     const search = () => {
         const nameList = employeeList.filter(empl => empl.name.toLowerCase().includes(query.toLowerCase()));
         const lastList = employeeList.filter(empl => empl.last.toLowerCase().includes(query.toLowerCase()));
@@ -55,24 +57,22 @@ const AppContainer = () => {
 
     return(
         <AppComponent
-        defaultEmployee={defaultEmployee}
-        query={query}
-        setQuery={setQuery}
         coin={coin}
+        query={query}
+        search={search}
         setCoin={setCoin}
+        setQuery={setQuery}
         isEditing={isEditing}
-        setIsEditing={setIsEditing}
+        changeCoin={changeCoin}
         modalState={modalState}
-        setModalState={setModalState}
+        editEmployee={editEmployee}
         employeeList={employeeList}
+        setIsEditing={setIsEditing}
+        setModalState={setModalState}
+        defaultEmployee={defaultEmployee}
         setEmployeeList={setEmployeeList}
         currentEmployee={currentEmployee}
-        setCurrentEmployee={setCurrentEmployee}
-        search={search}
-        changeCoin={changeCoin}
-        editEmployee={editEmployee}
-        
-        />
+        setCurrentEmployee={setCurrentEmployee}/>
     );
 
 }

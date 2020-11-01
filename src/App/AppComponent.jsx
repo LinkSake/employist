@@ -34,8 +34,8 @@ const AppComponent = ( props ) => {
                             setModalState={props.setModalState}
                             setEmployees={props.setEmployeeList}
                             currentEmployee={props.currentEmployee}
-                            setCurrentEmployee={props.setCurrentEmployee}
-                            defaultEmployee={props.defaultEmployee}/>
+                            defaultEmployee={props.defaultEmployee}
+                            setCurrentEmployee={props.setCurrentEmployee}/>
                         </Grid.Column>
                         <Grid.Column computer='8' tablet='8' mobile='16'>
                             <Header textAlign='center' as='h3'>
@@ -55,8 +55,8 @@ const AppComponent = ( props ) => {
                     <TableContainer
                     coin={props.coin}
                     employees={props.search()}
-                    setEmployees={props.setEmployeeList}
-                    editEmployee={props.editEmployee}/>
+                    editEmployee={props.editEmployee}
+                    setEmployees={props.setEmployeeList}/>
                 </Grid.Row>
             </Grid.Column>
             <Grid.Column computer='2' tablet='1' mobile='1'/>
