@@ -1,18 +1,12 @@
 import React from 'react';
 import { Button, Form, Grid, Input, Modal } from 'semantic-ui-react';
 
-
-//TODO: Ya no funcionan el agregar nuevo empleado / editar empleado
-
-const NewComponent = ( props ) => {
+const FormComponent = ( props ) => {
     return(
         <Modal
         as={Form}
         open={props.modalState}
-        onSubmit={
-            (props.isEditing) ? (e => props.handleSubmit(e)) 
-            : (() => { props.updateEmployee() })
-        }
+        onSubmit={(e => props.handleSubmit(e))}
         onOpen={() => props.setModalState(true)}
         onClose={() => props.setModalState(false)}
         trigger={
@@ -20,7 +14,7 @@ const NewComponent = ( props ) => {
             onClick={ () => { 
                 props.setIsEditing(false) 
                 props.setCurrentEmployee(props.defaultEmployee)
-            } }>
+            }}>
                 Add an employee
             </Button>
         }>
@@ -98,11 +92,11 @@ const NewComponent = ( props ) => {
                     Close
                 </Button>
                 <Button type='submit'>
-                    Add
+                    {(props.isEditing) ? 'Update' : 'Add'} 
                 </Button>
             </Modal.Actions>
         </Modal>
     );
 }
 
-export default NewComponent;
+export default FormComponent;

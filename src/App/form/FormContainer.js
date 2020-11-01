@@ -1,7 +1,7 @@
+import FormComponent from './FormComponent';
 import { React, useState, useEffect } from 'react';
-import NewComponent from './NewComponent';
 
-const NewContainer = ( props ) => {
+const FormContainer = ( props ) => {
 
     const [employee, setEmployee] = useState(props.currentEmployee);
     
@@ -16,39 +16,40 @@ const NewContainer = ( props ) => {
         setEmployee({...employee, [key]:value});
     }
 
-    const updateEmployee = () => {
-        console.log(employee);
-        const id = employee.id;
-        const updEmpl = employee;
+    const updateEmployee = ( employee ) => {
         props.setEmployees( props.employees.map(
-            (empl) => (empl.id === id ? updEmpl : empl)
+            (empl) => (empl.id === employee.id ? employee : empl)
         ));
         props.setIsEditing(false);
         props.setModalState(false);
-        props.setCurrentEmployee(props.defaultEmployee)
+        props.setCurrentEmployee(props.defaultEmployee);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (
-            employee.name !== '' && 
-            employee.last !== '' && 
-            employee.company !== '' && 
-            employee.wage > 0 && employee.wage !== null) {
-                addEmployee(employee);
-                setEmployee(props.currentEmployee);
-                props.setModalState(false);
+        if (props.isEditing) {
+            updateEmployee(employee);    
         } else {
-            alert('All fields are required, and wages must be greater than 0!');
+            if (
+                employee.name !== '' && 
+                employee.last !== '' && 
+                employee.company !== '' && 
+                employee.wage > 0 && employee.wage !== null) {
+                    addEmployee(employee);
+                    setEmployee(props.currentEmployee);
+                    props.setModalState(false);
+            } else {
+                alert('All fields are required, and wages must be greater than 0!');
+            }
         }
     }
 
     useEffect(() => {
         setEmployee(props.currentEmployee);
-    }, [props])
+    }, [props]);
 
     return (
-        <NewComponent 
+        <FormComponent 
         coin={props.coin}
         employee={employee}
         isEditing={props.isEditing}
@@ -59,9 +60,8 @@ const NewContainer = ( props ) => {
         setModalState={props.setModalState}
         handleInputChange={handleInputChange}
         defaultEmployee={props.defaultEmployee}
-        setCurrentEmployee={props.setCurrentEmployee}
-        />
+        setCurrentEmployee={props.setCurrentEmployee}/>
     );
 }
 
-export default NewContainer;
+export default FormContainer;

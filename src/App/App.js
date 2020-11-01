@@ -1,6 +1,6 @@
 import './App.css';
 import { React, useState } from 'react';
-import NewConrtainer from './new/NewContainer';
+import FormConrtainer from './form/FormContainer';
 import TableContainer from './table/TableContainer';
 import SearchContainer from './search/SearchCointainer';
 import { Button, Header, Icon, Grid } from 'semantic-ui-react';
@@ -77,7 +77,7 @@ const App = () => {
                                 <Icon name="users"/>
                                 You currently have {employeeList.length} employees.
                             </Header>
-                            <NewConrtainer 
+                            <FormConrtainer 
                             coin={coin}
                             isEditing={isEditing}
                             modalState={modalState} 
@@ -87,13 +87,12 @@ const App = () => {
                             setEmployees={setEmployeeList}
                             currentEmployee={currentEmployee}
                             setCurrentEmployee={setCurrentEmployee}
-                            defaultEmployee={defaultEmployee}
-                            />
+                            defaultEmployee={defaultEmployee}/>
                         </Grid.Column>
                         <Grid.Column computer='8' tablet='8' mobile='16'>
                             <Header textAlign='center' as='h3'>
                                 <Icon name="money"/>
-                                Weages are on {coin}
+                                Weages are on {coin}.
                             </Header>
                             <Button fluid onClick={() => { changeCoin() }}>
                                 Change currency
