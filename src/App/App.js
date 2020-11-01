@@ -1,7 +1,8 @@
 import './App.css';
 import { React, useState } from 'react';
-import TableContainer from './table/TableContainer';
 import NewConrtainer from './new/NewContainer';
+import { Button, Grid } from 'semantic-ui-react';
+import TableContainer from './table/TableContainer';
 
 const App = () => {
 
@@ -11,13 +12,33 @@ const App = () => {
     { id: 2, name: 'Rodrigo', last: 'Ka', company: 'Corp. Co.', img: '', wage: 1998 },
   ]
 
-  const [employeeList, setEmployeeList] = useState(tempEmploy)
+  const [employeeList, setEmployeeList] = useState(tempEmploy);
+  const [modalState, setModalState] = useState(false);
 
   return (
-    <div className="App">
-      <TableContainer employees={employeeList}/>
-      <NewConrtainer employees={employeeList} setEmployees={setEmployeeList}/>
-    </div>
+    <Grid columns='16'>
+        <Grid.Column computer='2' tablet='1' mobile='1'/>
+        <Grid.Column computer='12' tablet='16' mobile='16'>
+          <Grid.Row>
+            <Grid columns='12'>
+              <Grid.Column computer='8' tablet='8' mobile='16'>
+                <NewConrtainer 
+                modalState={modalState} 
+                employees={employeeList} 
+                setModalState={setModalState}
+                setEmployees={setEmployeeList}/>
+              </Grid.Column>
+              <Grid.Column computer='8' tablet='8' mobile='16'>
+                <Button fluid>Change currency</Button>
+              </Grid.Column>
+            </Grid>
+          </Grid.Row>
+          <Grid.Row>
+            <TableContainer employees={employeeList}/>
+          </Grid.Row>
+        </Grid.Column>
+        <Grid.Column computer='2' tablet='1' mobile='1'/>
+    </Grid>
   );
 }
 

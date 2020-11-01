@@ -1,29 +1,82 @@
 import React from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Grid, Input, Modal } from 'semantic-ui-react';
 
 const NewComponent = ( props ) => {
     return(
-        <Form onSubmit={props.handleSubmit}>
-            <Form.Field required>
-                <label>First Name</label>
-                <input type="text" name="name" value={props.employee.name} onChange={props.handleInputChange}/>
-            </Form.Field>
-            <Form.Field required>
-                <label>Last Name</label>
-                <input type="text" name="last" value={props.employee.last} onChange={props.handleInputChange}/>
-            </Form.Field>
-            <Form.Field required>
-                <label>Company</label>
-                <input type="text" name="company" value={props.employee.company} onChange={props.handleInputChange} />
-            </Form.Field>
-            <Form.Field required>
-                <label>Wage</label>
-                <input type="number" name="wage" step="any" value={props.employee.wage} onChange={props.handleInputChange}/>
-            </Form.Field>
-            <Button type="submit">
-                Add new employee
-            </Button>
-        </Form>
+        <Modal
+        as={Form}
+        open={props.modalState}
+        onSubmit={e => props.handleSubmit(e)}
+        onOpen={() => props.setModalState(true)}
+        onClose={() => props.setModalState(false)}
+        trigger={<Button fluid>Add a Employee</Button>}>
+            <Modal.Header>Add a new employee!</Modal.Header>
+            <Modal.Content>
+                <Grid columns="16">
+                    <Grid.Row>
+                        <Grid.Column computer='8' tablet='8' mobile='16'>
+                            <Form.Field required>
+                                <label>First Name</label>
+                                <Input
+                                type='text' 
+                                name='name' 
+                                icon='user'
+                                iconPosition='left'
+                                value={props.employee.name} 
+                                onChange={props.handleInputChange}/>
+                            </Form.Field>
+                        </Grid.Column>
+                        <Grid.Column computer='8' tablet='8' mobile='16'>
+                            <Form.Field required>
+                                <label>Last Name</label>
+                                <Input
+                                type='text' 
+                                name='last' 
+                                icon='users'
+                                iconPosition='left' 
+                                value={props.employee.last} 
+                                onChange={props.handleInputChange}/>
+                            </Form.Field>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column computer='8' tablet='8' mobile='16'>
+                            <Form.Field required>
+                                <label>Company</label>
+                                <Input 
+                                type='text' 
+                                name='company'
+                                icon='building'
+                                iconPosition='left'  
+                                value={props.employee.company} 
+                                onChange={props.handleInputChange} />
+                            </Form.Field>
+                        </Grid.Column>
+                        <Grid.Column computer='8' tablet='8' mobile='16'>
+                            <Form.Field required>
+                                <label>Wage</label>
+                                <Input 
+                                step='any'
+                                name='wage' 
+                                type='number' 
+                                iconPosition='left' 
+                                icon='money bill alternate'
+                                value={props.employee.wage} 
+                                onChange={props.handleInputChange}/>
+                            </Form.Field>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+            </Modal.Content>
+            <Modal.Actions>
+                <Button onClick={() => props.setModalState(false)}>
+                    Close
+                </Button>
+                <Button type='submit'>
+                    Add
+                </Button>
+            </Modal.Actions>
+        </Modal>
     );
 }
 

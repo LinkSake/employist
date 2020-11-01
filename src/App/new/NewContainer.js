@@ -30,11 +30,18 @@ const NewContainer = ( props ) => {
         if (!employee.name || !employee.last || !employee.company || !employee.wage) {
             addEmployee(employee);
             setEmployee(defaultValues);
+            props.setModalState(false);
         }
     }
 
     return (
-        <NewComponent employee={employee} handleInputChange={handleInputChange} handleSubmit={handleSubmit}/>
+        <NewComponent 
+        employee={employee}
+        handleSubmit={handleSubmit}
+        modalState={props.modalState}
+        setModalState={props.setModalState}
+        handleInputChange={handleInputChange}
+        />
     );
 }
 
