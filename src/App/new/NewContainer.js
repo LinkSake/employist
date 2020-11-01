@@ -8,7 +8,7 @@ const NewContainer = ( props ) => {
         name: '',
         last: '',
         company: '',
-        img: '',
+        img: '/img/default.png',
         wage: 0
     }
 
