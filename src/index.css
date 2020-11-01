@@ -24,3 +24,12 @@ code {
 .cursor-pointer-i{
   cursor: pointer !important;
 }
+
+.ui.button {
+  animation-iteration-count: 1 !important;
+  animation-duration: .3s !important;
+  animation-timing-function: ease !important;
+  animation-fill-mode: both !important;
+  transition-duration: 500ms !important;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform !important;
+}

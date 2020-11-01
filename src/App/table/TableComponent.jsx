@@ -46,13 +46,19 @@ const TableComponent = ( props ) => {
                                 <Grid>
                                     <Grid.Row>
                                         <Grid.Column computer='8' tablet='8' mobile='16'>
-                                            <Button fluid
+                                            <Button 
+                                            fluid
+                                            inverted
+                                            color='green' 
                                             onClick={() => { props.editEmployee(empl) }}>
                                                 Edit
                                             </Button>
                                         </Grid.Column>
                                         <Grid.Column computer='8' tablet='8' mobile='16'>
-                                            <Button fluid 
+                                            <Button 
+                                            fluid
+                                            inverted
+                                            color='green'  
                                             onClick={() => { props.deleteEmployee(empl.id) }}>
                                                 Delete
                                             </Button>

@@ -10,7 +10,10 @@ const FormComponent = ( props ) => {
         onOpen={() => props.setModalState(true)}
         onClose={() => props.setModalState(false)}
         trigger={
-            <Button fluid 
+            <Button 
+            fluid
+            inverted
+            color='green'  
             onClick={ () => { 
                 props.setIsEditing(false) 
                 props.setCurrentEmployee(props.defaultEmployee)
@@ -97,10 +100,16 @@ const FormComponent = ( props ) => {
                 </Grid>
             </Modal.Content>
             <Modal.Actions>
-                <Button onClick={() => props.setModalState(false)}>
+                <Button
+                inverted
+                color='green'  
+                onClick={() => props.setModalState(false)}>
                     Close
                 </Button>
-                <Button type='submit'>
+                <Button 
+                inverted
+                color='green' 
+                type='submit'>
                     {(props.isEditing) ? 'Update' : 'Add'} 
                 </Button>
             </Modal.Actions>

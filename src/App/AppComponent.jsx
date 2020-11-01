@@ -43,7 +43,11 @@ const AppComponent = ( props ) => {
                                 <Icon name="money"/>
                                 Weages are on {props.coin}.
                             </Header>
-                            <Button fluid onClick={() => { props.changeCoin() }}>
+                            <Button
+                            fluid 
+                            inverted
+                            color='green' 
+                            onClick={() => { props.changeCoin() }}>
                                 Change currency
                             </Button>
                         </Grid.Column>

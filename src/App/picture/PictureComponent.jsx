@@ -28,12 +28,20 @@ const PictureComponent = ( props ) => {
                             <Grid.Row>
                                 <Grid.Column computer='3' tablet='3' mobile='1'/>
                                 <Grid.Column computer='5' tablet='5' mobile='7'>
-                                    <Button fluid onClick={() => { props.setImgSrc(null) }}>
+                                    <Button 
+                                    fluid
+                                    inverted
+                                    color='green'  
+                                    onClick={() => { props.setImgSrc(null) }}>
                                         Delete
                                     </Button>
                                 </Grid.Column>
                                 <Grid.Column computer='5' tablet='5' mobile='7'>
-                                    <Button fluid onClick={() =>{ 
+                                    <Button
+                                    fluid 
+                                    inverted
+                                    color='green'  
+                                    onClick={() =>{ 
                                         props.save();
                                         props.setPictureModal(false);
                                         props.setImgSrc(null);
@@ -61,13 +69,21 @@ const PictureComponent = ( props ) => {
                             <Grid.Row>
                                 <Grid.Column computer='3' tablet='3' mobile='1'/>
                                 <Grid.Column computer='5' tablet='5' mobile='7'>
-                                    <Button fluid onClick={() => { props.setPictureModal(false) }}>
+                                    <Button 
+                                    fluid
+                                    inverted
+                                    color='green' 
+                                    onClick={() => { props.setPictureModal(false) }}>
                                         Close
                                     </Button>
                                 </Grid.Column>
                                 <Grid.Column computer='5' tablet='5' mobile='7'>
-                                    <Button fluid onClick={() => { props.capture() }}>
-                                        Take a picture!
+                                    <Button 
+                                    fluid
+                                    inverted
+                                    color='green'
+                                    onClick={() => { props.capture() }}>
+                                        Capture
                                     </Button>
                                 </Grid.Column>
                                 <Grid.Column computer='3' tablet='3' mobile='1'/>
