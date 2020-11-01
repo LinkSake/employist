@@ -13,10 +13,14 @@ const App = () => {
         { id: 2, name: 'Rodrigo', last: 'Ka', company: 'Corp. Co.', img: '/img/default.png', wage: 1998 },
     ];
 
+    const defaultEmployee = { id: 0, name: '', last: '', company: '', img: '/img/default.png', wage: 0 };
+
     const [query, setQuery] = useState('');
     const [coin, setCoin] = useState('MXN');
+    const [isEditing, setIsEditing] = useState(false);
     const [modalState, setModalState] = useState(false);
     const [employeeList, setEmployeeList] = useState(tempEmploy);
+    const [currentEmployee, setCurrentEmployee] = useState(defaultEmployee);
 
     const search = () => {
         const nameList = employeeList.filter(empl => empl.name.toLowerCase().includes(query.toLowerCase()));
@@ -38,6 +42,19 @@ const App = () => {
                 empl.wage = empl.wage * 21.50;
             });
         }
+    }
+
+    const editEmployee = (empl) => {
+        setIsEditing(true);
+        setModalState(true);
+        setCurrentEmployee({
+            id: empl.id, 
+            name: empl.name, 
+            last: empl.last, 
+            company: empl.company, 
+            img: empl.img, 
+            wage: empl.wage
+        });
     }
 
     return (
@@ -62,10 +79,16 @@ const App = () => {
                             </Header>
                             <NewConrtainer 
                             coin={coin}
+                            isEditing={isEditing}
                             modalState={modalState} 
                             employees={employeeList} 
+                            setIsEditing={setIsEditing}
                             setModalState={setModalState}
-                            setEmployees={setEmployeeList}/>
+                            setEmployees={setEmployeeList}
+                            currentEmployee={currentEmployee}
+                            setCurrentEmployee={setCurrentEmployee}
+                            defaultEmployee={defaultEmployee}
+                            />
                         </Grid.Column>
                         <Grid.Column computer='8' tablet='8' mobile='16'>
                             <Header textAlign='center' as='h3'>
@@ -85,7 +108,8 @@ const App = () => {
                     <TableContainer
                     coin={coin}
                     employees={search()}
-                    setEmployees={setEmployeeList}/>
+                    setEmployees={setEmployeeList}
+                    editEmployee={editEmployee}/>
                 </Grid.Row>
             </Grid.Column>
             <Grid.Column computer='2' tablet='1' mobile='1'/>

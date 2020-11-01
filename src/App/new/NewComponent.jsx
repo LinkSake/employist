@@ -1,16 +1,36 @@
 import React from 'react';
 import { Button, Form, Grid, Input, Modal } from 'semantic-ui-react';
 
+
+//TODO: Ya no funcionan el agregar nuevo empleado / editar empleado
+
 const NewComponent = ( props ) => {
     return(
         <Modal
         as={Form}
         open={props.modalState}
-        onSubmit={e => props.handleSubmit(e)}
+        onSubmit={
+            (props.isEditing) ? (e => props.handleSubmit(e)) 
+            : (() => { props.updateEmployee() })
+        }
         onOpen={() => props.setModalState(true)}
         onClose={() => props.setModalState(false)}
-        trigger={<Button fluid>Add a Employee</Button>}>
-            <Modal.Header>Add a new employee!</Modal.Header>
+        trigger={
+            <Button fluid 
+            onClick={ () => { 
+                props.setIsEditing(false) 
+                props.setCurrentEmployee(props.defaultEmployee)
+            } }>
+                Add an employee
+            </Button>
+        }>
+            <Modal.Header>
+                {
+                    (props.isEditing) ? 
+                    '👷‍♂️ Editing a current employee' 
+                    : '🧑‍💻 Add a new employee!'
+                } 
+            </Modal.Header>
             <Modal.Content>
                 <Grid columns="16">
                     <Grid.Row>
@@ -49,7 +69,8 @@ const NewComponent = ( props ) => {
                                 icon='building'
                                 iconPosition='left'  
                                 value={props.employee.company} 
-                                onChange={props.handleInputChange} />
+                                onChange={props.handleInputChange} 
+                                disabled={(props.isEditing) ? true : false}/>
                             </Form.Field>
                         </Grid.Column>
                         <Grid.Column computer='8' tablet='8' mobile='16'>

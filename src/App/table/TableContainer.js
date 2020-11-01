@@ -13,7 +13,9 @@ const TableContainer = ( props ) => {
         <TableComponent 
         coin={props.coin}
         employees={props.employees}
-        deleteEmployee={deleteEmployee}/>
+        deleteEmployee={deleteEmployee}
+        editEmployee={props.editEmployee}
+        />
     );
 }
 

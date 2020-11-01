@@ -44,7 +44,10 @@ const TableComponent = ( props ) => {
                                 <Grid>
                                     <Grid.Row>
                                         <Grid.Column computer='8' tablet='8' mobile='16'>
-                                            <Button fluid>Edit</Button>
+                                            <Button fluid
+                                            onClick={() => { props.editEmployee(empl) }}>
+                                                Edit
+                                            </Button>
                                         </Grid.Column>
                                         <Grid.Column computer='8' tablet='8' mobile='16'>
                                             <Button fluid 
