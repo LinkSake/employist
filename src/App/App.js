@@ -7,10 +7,10 @@ import { Button, Header, Icon, Grid } from 'semantic-ui-react';
 
 const App = () => {
 
-     const tempEmploy  = [
-        { id: 0, name: 'Martin', last: 'Xa', company: 'Corp. Co.', img: '', wage: 20000 },
-        { id: 1, name: 'Steve', last: 'Ta', company: 'Corp. Co.', img: '', wage: 30000 },
-        { id: 2, name: 'Rodrigo', last: 'Ka', company: 'Corp. Co.', img: '', wage: 1998 },
+    const tempEmploy  = [
+        { id: 0, name: 'Martin', last: 'Xa', company: 'Corp. Co.', img: '/img/default.png', wage: 20000 },
+        { id: 1, name: 'Steve', last: 'Ta', company: 'Corp. Co.', img: '/img/default.png', wage: 30000 },
+        { id: 2, name: 'Rodrigo', last: 'Ka', company: 'Corp. Co.', img: '/img/default.png', wage: 1998 },
     ];
 
     const [query, setQuery] = useState('');

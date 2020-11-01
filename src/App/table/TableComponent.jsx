@@ -22,7 +22,12 @@ const TableComponent = ( props ) => {
                     props.employees.map((empl) => (
                         <Table.Row key={empl.id}>
                             <Table.Cell>
-                                <Image src={empl.img} alt={empl.name + ' ' + empl.last}/>
+                                <Image 
+                                centered
+                                circular
+                                size='tiny' 
+                                src={empl.img} 
+                                alt={empl.name + ' ' + empl.last}/>
                             </Table.Cell>
                             <Table.Cell>{empl.name + ' ' +  empl.last}</Table.Cell>
                             <Table.Cell>{empl.company}</Table.Cell>
