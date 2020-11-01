@@ -27,7 +27,9 @@ const TableComponent = ( props ) => {
                                 circular
                                 size='tiny' 
                                 src={empl.img} 
-                                alt={empl.name + ' ' + empl.last}/>
+                                className='cursor-pointer-i'
+                                alt={empl.name + ' ' + empl.last}
+                                onClick={() => { props.pictureEmployee(empl) }}/>
                             </Table.Cell>
                             <Table.Cell>{empl.name + ' ' +  empl.last}</Table.Cell>
                             <Table.Cell>{empl.company}</Table.Cell>

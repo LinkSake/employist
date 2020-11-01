@@ -16,6 +16,7 @@ const AppContainer = () => {
     const [coin, setCoin] = useState('MXN');
     const [isEditing, setIsEditing] = useState(false);
     const [modalState, setModalState] = useState(false);
+    const [pictureModal, setPictureModal] = useState(false);
     const [employeeList, setEmployeeList] = useState(tempEmploy);
     const [currentEmployee, setCurrentEmployee] = useState(defaultEmployee);
 
@@ -55,6 +56,18 @@ const AppContainer = () => {
         });
     }
 
+    const pictureEmployee = (empl) => {
+        setPictureModal(true);
+        setCurrentEmployee({
+            id: empl.id, 
+            name: empl.name, 
+            last: empl.last, 
+            company: empl.company, 
+            img: empl.img, 
+            wage: empl.wage
+        });
+    }
+
     return(
         <AppComponent
         coin={coin}
@@ -68,10 +81,13 @@ const AppContainer = () => {
         editEmployee={editEmployee}
         employeeList={employeeList}
         setIsEditing={setIsEditing}
+        pictureModal={pictureModal}
         setModalState={setModalState}
         defaultEmployee={defaultEmployee}
         setEmployeeList={setEmployeeList}
         currentEmployee={currentEmployee}
+        setPictureModal={setPictureModal}
+        pictureEmployee={pictureEmployee}
         setCurrentEmployee={setCurrentEmployee}/>
     );
 

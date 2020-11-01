@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Grid, Input, Modal } from 'semantic-ui-react';
+import { Button, Form, Grid, Input, Message, Modal } from 'semantic-ui-react';
 
 const FormComponent = ( props ) => {
     return(
@@ -27,6 +27,15 @@ const FormComponent = ( props ) => {
             </Modal.Header>
             <Modal.Content>
                 <Grid columns="16">
+                    <Grid.Row>
+                        <Grid.Column computer='16' tablet='16' mobile='16'>
+                            <Message
+                            color='teal'
+                            icon='picture'
+                            header='Be ready to smile!'
+                            content='You can take a picture for the employee by clicking the image on the table.'/>
+                        </Grid.Column>
+                    </Grid.Row>
                     <Grid.Row>
                         <Grid.Column computer='8' tablet='8' mobile='16'>
                             <Form.Field required>

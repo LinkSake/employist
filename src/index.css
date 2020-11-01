@@ -20,3 +20,7 @@ code {
   padding-top: 0rem !important;
   padding-bottom: 0rem !important;
 }
+
+.cursor-pointer-i{
+  cursor: pointer !important;
+}

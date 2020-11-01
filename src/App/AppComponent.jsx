@@ -2,6 +2,7 @@ import React from 'react';
 import FormConrtainer from './form/FormContainer';
 import TableContainer from './table/TableContainer';
 import SearchContainer from './search/SearchCointainer';
+import PictureContainer from './picture/PictureContainer';
 import { Button, Header, Icon, Grid } from 'semantic-ui-react';
 
 const AppComponent = ( props ) => {
@@ -56,7 +57,17 @@ const AppComponent = ( props ) => {
                     coin={props.coin}
                     employees={props.search()}
                     editEmployee={props.editEmployee}
-                    setEmployees={props.setEmployeeList}/>
+                    setEmployees={props.setEmployeeList}
+                    pictureEmployee={props.pictureEmployee}/>
+                </Grid.Row>
+                <Grid.Row>
+                    <PictureContainer
+                    setEmployees={props.setEmployeeList}
+                    employees={props.employeeList}
+                    pictureModal={props.pictureModal}
+                    setPictureModal={props.setPictureModal}
+                    currentEmployee={props.currentEmployee}
+                    />
                 </Grid.Row>
             </Grid.Column>
             <Grid.Column computer='2' tablet='1' mobile='1'/>

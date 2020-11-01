@@ -1,5 +1,5 @@
 import React from 'react';
-import TableComponent from './TableComponent'
+import TableComponent from './TableComponent';
 
 const TableContainer = ( props ) => {
 
@@ -15,7 +15,7 @@ const TableContainer = ( props ) => {
         employees={props.employees}
         deleteEmployee={deleteEmployee}
         editEmployee={props.editEmployee}
-        />
+        pictureEmployee={props.pictureEmployee}/>
     );
 }
 
