@@ -1,6 +1,6 @@
-import './index.css';
 import React from 'react';
 import App from './app/App';
+import './index.output.css';
 import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css';
 import reportWebVitals from './reportWebVitals';

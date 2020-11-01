@@ -16,7 +16,7 @@ const NewComponent = ( props ) => {
                     <Grid.Row>
                         <Grid.Column computer='8' tablet='8' mobile='16'>
                             <Form.Field required>
-                                <label>First Name</label>
+                                <label className="pt-4">First Name</label>
                                 <Input
                                 type='text' 
                                 name='name' 
@@ -28,7 +28,7 @@ const NewComponent = ( props ) => {
                         </Grid.Column>
                         <Grid.Column computer='8' tablet='8' mobile='16'>
                             <Form.Field required>
-                                <label>Last Name</label>
+                                <label className="pt-4">Last Name</label>
                                 <Input
                                 type='text' 
                                 name='last' 
@@ -42,7 +42,7 @@ const NewComponent = ( props ) => {
                     <Grid.Row>
                         <Grid.Column computer='8' tablet='8' mobile='16'>
                             <Form.Field required>
-                                <label>Company</label>
+                                <label className="pt-4" >Company</label>
                                 <Input 
                                 type='text' 
                                 name='company'
@@ -53,13 +53,15 @@ const NewComponent = ( props ) => {
                             </Form.Field>
                         </Grid.Column>
                         <Grid.Column computer='8' tablet='8' mobile='16'>
-                            <Form.Field required>
-                                <label>Wage</label>
+                            <Form.Field 
+                            className='pb-4' 
+                            required>
+                                <label className="pt-4">Wage</label>
                                 <Input 
                                 step='any'
                                 name='wage' 
                                 type='number' 
-                                iconPosition='left' 
+                                iconPosition='left'
                                 icon='money bill alternate'
                                 value={props.employee.wage} 
                                 onChange={props.handleInputChange}/>
