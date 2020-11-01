@@ -43,7 +43,9 @@ const App = () => {
                 </Grid>
             </Grid.Row>
             <Grid.Row>
-                <TableContainer employees={employeeList}/>
+                <TableContainer
+                employees={employeeList}
+                setEmployees={setEmployeeList}/>
             </Grid.Row>
         </Grid.Column>
         <Grid.Column computer='2' tablet='1' mobile='1'/>

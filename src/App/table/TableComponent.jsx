@@ -25,7 +25,9 @@ const TableComponent = ( props ) => {
                             <Table.Cell>{empl.wage}</Table.Cell>
                             <Table.Cell>
                                 <Button>Edit</Button>
-                                <Button>Delete</Button>
+                                <Button onClick={() => { props.deleteEmployee(empl.id) }}>
+                                    Delete
+                                </Button>
                             </Table.Cell>
                         </Table.Row>
                     ))

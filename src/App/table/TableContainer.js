@@ -3,8 +3,16 @@ import TableComponent from './TableComponent'
 
 const TableContainer = ( props ) => {
 
+    const deleteEmployee = ( id ) => {
+        props.setEmployees(props.employees.filter(
+            (empl) => empl.id !== id
+        ));
+    }
+
     return(
-        <TableComponent employees={props.employees}/>
+        <TableComponent 
+        employees={props.employees}
+        deleteEmployee={deleteEmployee}/>
     );
 }
 
