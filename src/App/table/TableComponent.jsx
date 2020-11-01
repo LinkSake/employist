@@ -13,7 +13,7 @@ const TableComponent = ( props ) => {
                     <Table.HeaderCell>Photo</Table.HeaderCell>
                     <Table.HeaderCell>Name</Table.HeaderCell>
                     <Table.HeaderCell>Company</Table.HeaderCell>
-                    <Table.HeaderCell textAlign='right'>Wage</Table.HeaderCell>
+                    <Table.HeaderCell>Wage</Table.HeaderCell>
                     <Table.HeaderCell/>
                 </Table.Row>
             </Table.Header>
@@ -40,7 +40,7 @@ const TableComponent = ( props ) => {
                                 value={empl.wage} 
                                 displayType='text' 
                                 thousandSeparator={true}
-                                className={(empl.wage >= wageLimit) ? ('text-green-500') : ('text-red-500')}/>
+                                className={(empl.wage >= wageLimit) ? ('text-green-500 font-mono') : ('text-red-500 font-mono')}/>
                             </Table.Cell>
                             <Table.Cell>
                                 <Grid>
