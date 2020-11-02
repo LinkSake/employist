@@ -10,13 +10,7 @@
 		<img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square"
 			 alt="Gitmoji">
 	</a>
-    <h2 style="text-align: center;">Manage your employees in a easy way!</h2>
-    <br>
 </p>
-
-
-
----
 
 ## Run this project
 
@@ -33,7 +27,6 @@ Builds the app for production to the `build` folder.
 
 Builds the `index.output.css` file that Tailwind creates.
 
----
 
 ## Build with
 
