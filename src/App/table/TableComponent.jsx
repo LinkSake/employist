@@ -7,7 +7,7 @@ const TableComponent = ( props ) => {
     let wageLimit = (props.coin === 'MXN') ? 10000 : 465.11627907;
 
     return(
-        <Table celled striped selectable>
+        <Table celled striped selectable singleLine>
             <Table.Header>
                 <Table.Row>
                     <Table.HeaderCell>Photo</Table.HeaderCell>
@@ -42,21 +42,20 @@ const TableComponent = ( props ) => {
                                 thousandSeparator={true}
                                 className={(empl.wage >= wageLimit) ? ('text-green-500 font-mono') : ('text-red-500 font-mono')}/>
                             </Table.Cell>
-                            <Table.Cell>
+                            <Table.Cell width='4'>
                                 <Grid>
                                     <Grid.Row>
                                         <Grid.Column computer='8' tablet='8' mobile='16'>
                                             <Button 
-                                            fluid
                                             inverted
                                             color='green' 
+                                            className='ml-4-i'
                                             onClick={() => { props.editEmployee(empl) }}>
                                                 Edit
                                             </Button>
                                         </Grid.Column>
                                         <Grid.Column computer='8' tablet='8' mobile='16'>
                                             <Button 
-                                            fluid
                                             inverted
                                             color='green'  
                                             onClick={() => { props.deleteEmployee(empl.id) }}>

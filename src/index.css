@@ -33,3 +33,13 @@ code {
   transition-duration: 500ms !important;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform !important;
 }
+
+.ml-4-i {
+  margin-left: 1rem !important;
+}
+
+@media only screen and (max-width: 767px){
+  .ml-4-i {
+    margin-left: 0rem !important;
+  }
+}

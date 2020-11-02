@@ -33,7 +33,7 @@ const FormComponent = ( props ) => {
                     <Grid.Row>
                         <Grid.Column computer='16' tablet='16' mobile='16'>
                             <Message
-                            color='teal'
+                            color='green'
                             icon='picture'
                             header='Be ready to smile!'
                             content='You can take a picture for the employee by clicking the image on the table.'/>
