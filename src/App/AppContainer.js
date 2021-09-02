@@ -5,11 +5,11 @@ const AppContainer = () => {
 
     /* Default values */
     const tempEmploy  = [
-        { id: 0, name: 'Wallace', last: 'Wells', company: 'Pilgrim Corp.', img: '/img/default.png', wage: 15090 },
-        { id: 1, name: 'Stephen', last: 'Stills', company: 'Pilgrim Corp.', img: '/img/default.png', wage: 5998 },
-        { id: 2, name: 'Gideon', last: 'Graves', company: 'GGG Record Label', img: '/img/default.png', wage: 25250 },
+        { id: 0, name: 'Wallace', last: 'Wells', company: 'Pilgrim Corp.', img: process.env.PUBLIC_URL + '/img/default.png', wage: 15090 },
+        { id: 1, name: 'Stephen', last: 'Stills', company: 'Pilgrim Corp.', img: process.env.PUBLIC_URL + '/img/default.png', wage: 5998 },
+        { id: 2, name: 'Gideon', last: 'Graves', company: 'GGG Record Label', img: process.env.PUBLIC_URL + '/img/default.png', wage: 25250 },
     ];
-    const defaultEmployee = { id: 0, name: '', last: '', company: '', img: '/img/default.png', wage: 0 };
+    const defaultEmployee = { id: 0, name: '', last: '', company: '', img: process.env.PUBLIC_URL + '/img/default.png', wage: 0 };
 
     /* States */
     const [query, setQuery] = useState('');
