@@ -41,7 +41,7 @@ const AppComponent = ( props ) => {
                         <Grid.Column computer='8' tablet='8' mobile='16'>
                             <Header textAlign='center' as='h3'>
                                 <Icon name="money"/>
-                                Weages are on {props.coin}.
+                                Wages are on {props.coin}.
                             </Header>
                             <Button
                             fluid 

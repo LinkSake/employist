@@ -2,7 +2,7 @@ import React from 'react';
 import './index.output.css';
 import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css';
-import AppContainer from './app/AppContainer';
+import AppContainer from './App/AppContainer';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
